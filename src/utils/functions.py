@@ -168,6 +168,7 @@ def generate_answer_with_memory(conversation_id: str, user_query: str, ws:bool) 
         last_message = []
     else:
         last_message =[ {"role": msg["role"], "content": msg["content"]} for msg in message_history]
+    last_message.reverse()
     last_message.insert(0,{"role": "user", "content": user_query})
     last_message.insert(0,{"role": "assistant", "content": answer})
     return {"conversation_id": conversation_id,"message":last_message}

@@ -51,7 +51,7 @@ make install
 make run
 
 # Acceder a la API
-http://http://127.0.0.1:8000/doc
+http://http://127.0.0.1:8000/docs
 
 # Ejecutar pruebas
 make test
