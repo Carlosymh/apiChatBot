@@ -110,7 +110,7 @@ def retrieve_session_history(conversation_id: str) -> List:
 
 rerank_model = CrossEncoder("mixedbread-ai/mxbai-rerank-xsmall-v1")
 
-def generate_answer_with_memory(conversation_id: str, user_query: str, ws:bool) -> None:
+def generate_answer_with_memory(conversation_id: str, user_query: str) -> None:
     """
     Generate an answer to the user's query taking chat history into account.
 
