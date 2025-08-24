@@ -159,8 +159,6 @@ def generate_answer_with_memory(conversation_id: str, user_query: str) -> None:
     # The role value for user messages is "user", and "assistant" for the generated answer
     store_chat_message(conversation_id, "user", user_query)
     store_chat_message(conversation_id, "assistant", answer)
-    if ws:
-        return {"conversation_id": conversation_id,"message":answer}
     last_message =[]
     if len(message_history)> 4:
         last_message = [{"role": msg["role"], "content": msg["content"]} for msg in message_history[0:4]]
