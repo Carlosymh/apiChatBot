@@ -8,19 +8,17 @@ Antes de comenzar, asegúrate de tener instalados en tu máquina:
 - **Docker** y **Docker Compose**
 
 Puedes verificar la instalación con:
-```bash
+``` 
 python3 --version
 docker --version
 docker-compose --version
+```
 Si no tienes Docker instalado, consulta la guía oficial:
 https://docs.docker.com/get-docker/
 
 Variables de entorno
 Crea un archivo .env en la raíz con el siguiente contenido:
 
-env
-Copiar
-Editar
 MONGODB_URI=mongodb://mongo:27017
 SERVERLESS_URL=https://mi-funcion-serverless.com/endpoint
 Ajusta los valores según tu entorno.
@@ -34,16 +32,13 @@ make install – Instala las dependencias locales (requiere Python y pip).
 
 make test – Ejecuta las pruebas con pytest.
 
-make run – Levanta la aplicación y MongoDB con Docker.
+make run – Levanta la aplicacióncon y la base de datos de mongo en Docker.
 
 make down – Detiene los servicios en ejecución.
 
 make clean – Detiene y elimina los contenedores, redes y volúmenes.
 
 Ejecución rápida
-bash
-Copiar
-Editar
 # Instalar dependencias locales (opcional si usarás Docker)
 make install
 
@@ -51,7 +46,7 @@ make install
 make run
 
 # Acceder a la API
-http://http://127.0.0.1:8000/docs
+http://http://127.0.0.1:8000/chatBot
 
 # Ejecutar pruebas
 make test
@@ -62,17 +57,15 @@ make down
 # Limpiar contenedores y volúmenes
 make clean
 Endpoints principales
+
 GET / – Verifica que la API está activa.
+
+GET /docs - Accede al Swagger 
 
 POST /chatBot – Envía mensajes al chatbot.
 
-WS /ws – Conexión WebSocket para comunicación en tiempo real.
-
 Estructura del proyecto
-css
-Copiar
-Editar
-.
+
 ├── Dockerfile
 ├── docker-compose.yml
 ├── Makefile
@@ -88,4 +81,5 @@ Editar
 │   └── utils/
 │       └── functions.py
 └── tests/
+    ├── conftest.py
     └── test_main.py

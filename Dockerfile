@@ -1,4 +1,7 @@
-FROM python:3.11-slim
+FROM python:3.11-slim-bookworm
+
+# Upgrade system packages to address vulnerabilities
+RUN apt-get update && apt-get upgrade -y && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Evita que Python genere archivos .pyc
 ENV PYTHONDONTWRITEBYTECODE=1
