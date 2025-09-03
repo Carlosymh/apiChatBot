@@ -20,8 +20,15 @@ Variables de entorno
 Crea un archivo .env en la raíz con el siguiente contenido:
 
 MONGODB_URI=mongodb://mongo:27017
-SERVERLESS_URL=https://mi-funcion-serverless.com/endpoint
-Ajusta los valores según tu entorno.
+LLM_URL= https://api.openai.com/v1/responses
+CLIENT_KEY="************"
+
+Variables de entorno para pruebas
+Crear un archivo .env.test.integration en la raíz con el siguiente contenido:}
+
+MONGODB_URI=mongodb://mongo:27017
+LLM_URL= https://api.openai.com/v1/responses
+CLIENT_KEY="************"
 
 Comandos principales
 El proyecto incluye un Makefile con los siguientes comandos:
