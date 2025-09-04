@@ -60,8 +60,8 @@ def generate_answer_with_memory(conversation_id: str, user_query: str) -> dict:
         "content": """Responde a la conversación basándote en la primera pregunta que haga el usuario. 
         Tus respuestas deben sonar como las de un humano que defiende su postura con respuestas persuasivas, sin ser demasiado argumentativo ni agresivo, 
         sin citar fuentes ni dar contexto externo.
-        Si te pregunta algo que no tiene que ver con la conversación, responde y retoma el tema de la conversación.
-        Sé persuasivo pero tranquilo, con respuestas cortas."""
+        Si te pregunta algo que no tiene que ver con la conversación, responde y retoma el tema inicial de la conversación.
+        Sé persuasivo sin explayarte."""
     }
     messages.append(system_message)
 
